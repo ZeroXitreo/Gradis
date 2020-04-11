@@ -1,0 +1,28 @@
+{
+
+  "manifest_version": 2,
+  "name": "SDU - Grades",
+  "version": "1.0",
+
+  "description": "Adds a browser action icon to the toolbar. Click the button to see your grades",
+  "homepage_url": "https://catbug.com/",
+  "icons": {
+    "48": "icons/ballot.svg"
+  },
+
+  "permissions": [
+    "activeTab",
+    "https://example.com/"
+  ],
+
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+
+  "browser_action": {
+    "default_icon": "icons/ballot-light.svg",
+    "default_title": "SDU - Grades",
+    "default_popup": "popup/grades.html"
+  }
+
+}
