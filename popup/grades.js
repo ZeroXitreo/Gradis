@@ -1,37 +1,90 @@
-document.getElementById('test').innerHTML = 'ahhhhhhh';
-document.getElementById('test2').innerHTML = testsite;
-
-function getCurrentWindowTabs()
+async function onGot(page)
 {
-    return browser.tabs.query({ currentWindow: true });
-}
+    await page.fetching();
 
-getCurrentWindowTabs().then(tabs =>
-{
-    for (let tab of tabs)
+    var gradesTbl = page.gradisGrades;
+
+    var grades = document.getElementById('grades');
+
+    for (var i = 0; i < gradesTbl.length; i++)
     {
-        if (tab.active)
+        let gradeTbl = gradesTbl[i].children;
+
+        var grade = document.createElement('div');
+        grade.classList.add('box');
+        grade.classList.add('grade');
+        grades.appendChild(grade);
+
+        var header = document.createElement('div');
+        header.classList.add('box');
+        header.classList.add('header');
+        grade.appendChild(header);
+
+        var description = document.createElement('div');
+        description.classList.add('description');
+        description.innerText = gradeTbl[1].innerText.trim();
+        header.appendChild(description);
+
+        var weight = document.createElement('div');
+        weight.classList.add('weight');
+        weight.innerText = gradeTbl[6].innerText + "ECTS";
+        header.appendChild(weight);
+
+        var results = document.createElement('div');
+        results.classList.add('results');
+        grade.appendChild(results);
+
+        var result = document.createElement('div');
+        result.classList.add('row');
+        result.classList.add('result');
+        results.appendChild(result);
+
+        var fill = document.createElement('div');
+        fill.classList.add('fill');
+        fill.innerText = 'Grade';
+        result.appendChild(fill);
+
+        var value = document.createElement('div');
+        value.classList.add('value');
+        result.appendChild(value);
+
+
+
+
+
+        let valueGr = gradeTbl[4].innerText.trim();
+        if (valueGr == "B")
         {
-            document.getElementById('test').innerHTML = tab.title;
+            value.classList.add('pass');
+            value.innerText = 'Pass';
         }
+        else if (valueGr == "IB")
+        {
+            value.classList.add('fail');
+            value.innerText = 'Fail';
+        }
+        else
+        {
+            valueGr = parseInt(valueGr);
+            if (valueGr >= 2)
+            {
+                value.classList.add('pass');
+                value.innerText = 'Pass';
+            }
+            else
+            {
+                value.classList.add('fail');
+                value.innerText = 'Fail';
+            }
+        }
+        //value.innerText = valueGr;
     }
-});
-
-
-function handleMessage(request, sender, sendResponse)
-{
-    console.log("Message from the content script: " +
-        request.greeting);
-    sendResponse({ response: "Response from background script" });
 }
 
-browser.runtime.onMessage.addListener(handleMessage);
+function onError(error)
+{
+    console.log(`Error: ${error}`);
+}
 
-/**
- * When the popup loads, inject a content script into the active tab,
- * and add a click handler.
- * If we couldn't inject the script, handle the error.
- */
-/*browser.tabs.executeScript({ file: "/content_scripts/beastify.js" })
-    .then(listenForClicks)
-    .catch(e => console.error(e));*/
+var getting = browser.runtime.getBackgroundPage();
+getting.then(onGot, onError);

@@ -1,7 +1,7 @@
 {
 
   "manifest_version": 2,
-  "name": "SDU - Grades",
+  "name": "Gradis",
   "version": "1.0",
 
   "description": "Adds a browser action icon to the toolbar. Click the button to see your grades",
@@ -12,7 +12,7 @@
 
   "permissions": [
     "activeTab",
-    "https://example.com/"
+    "https://selvbprod.sdu.dk/prod/sb/resultater/studresultater.jsp"
   ],
 
   "background": {
@@ -21,7 +21,7 @@
 
   "browser_action": {
     "default_icon": "icons/ballot-light.svg",
-    "default_title": "SDU - Grades",
+    "default_title": "Gradis",
     "default_popup": "popup/grades.html"
   }
 
