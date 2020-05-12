@@ -12,7 +12,8 @@
 
   "permissions": [
     "activeTab",
-    "https://selvbprod.sdu.dk/prod/sb/resultater/studresultater.jsp"
+    "https://selvbprod.sdu.dk/prod/sb/resultater/studresultater.jsp",
+    "https://www.easytools.dk/(S(n22hzcr3jbbyhujp5femwu3m)F(sAOB1vTWlfRlVEOrZaIDLO4GSJ63_tnR5CtazZpehs0bgYq1bMR-BoHuS7u91ZTDy4U4O42vNmKgHzFturWTkwwbkxV0DVjCndVoQZHifF8__v1dmh3SVKrc7y81d6u0iF4oyO66MEVXfNsv30UwC1DxtVFwasPOyREikjlDQV1Q8aMygBnqnfVYci_5xtSh0))/Pages/Grades/Grades.aspx"
   ],
 
   "background": {
