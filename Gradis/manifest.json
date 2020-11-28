@@ -6,7 +6,7 @@
   "description": "Adds a browser action icon to the toolbar. Click the button to see your grades",
   "homepage_url": "https://catbug.com/",
   "icons": {
-    "48": "icons/ballot.svg"
+    "48": "icons/loggedin.svg"
   },
 
   "permissions": [
@@ -21,7 +21,7 @@
   },
 
   "browser_action": {
-    "default_icon": "icons/ballot-light.svg",
+    "default_icon": "icons/loggedin.svg",
     "default_title": "Gradis",
     "default_popup": "popup/grades.html"
   }
