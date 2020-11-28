@@ -1,0 +1,90 @@
+﻿$blue: #1a83e9;
+
+body {
+    /*width: 24rem;*/
+    margin: unset;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(255,217,185);
+    background: linear-gradient(145deg, rgba(255,217,185,1) 0%, rgba(245,105,63,1) 100%);
+    background-attachment: fixed;
+    color: white;
+    width: 22rem;
+}
+
+.login {
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: $blue;
+    border-radius: .25rem;
+    margin: .5rem;
+    text-align: center;
+    text-decoration: unset;
+}
+
+.box {
+    background-color: white;
+    border-radius: .25rem;
+    color: #333;
+    box-shadow: 0 .1rem .1rem rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+}
+
+.row .fill {
+    flex: 1;
+}
+
+.grades {
+    margin: 2rem;
+}
+
+.grades .grade {
+    margin: .6rem 0;
+}
+
+.grades .grade .header {
+    padding: .6rem 1rem;
+}
+
+.grades .grade .header .description {
+    font-weight: 700;
+}
+
+.grades .grade .header .weight {
+    font-size: .625rem;
+    font-weight: 300;
+    color: #666;
+}
+
+.grades .grade .results {
+}
+
+.grades .grade .results .result {
+    margin: 1rem;
+    font-size: .8rem;
+    align-items: center;
+    font-weight: 500;
+}
+
+.grades .grade .results .result .value {
+    background-color: rgba(135, 135, 135, .15);
+    color: rgb(135, 135, 135);
+    border-radius: .25rem;
+    padding: .2rem .5rem;
+    font-weight: 700;
+}
+
+.grades .grade .results .result .value.pass {
+    background-color: rgba(77, 153, 235, .15);
+    color: rgb(77, 153, 235);
+}
+
+.grades .grade .results .result .value.fail {
+    background-color: rgba(225, 93, 109, .15);
+    color: rgb(225, 93, 109);
+}

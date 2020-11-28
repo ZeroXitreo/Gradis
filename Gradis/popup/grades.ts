@@ -1,4 +1,4 @@
-async function onGot(page)
+﻿async function onGot(page)
 {
     await page.fetching();
 

@@ -1,4 +1,4 @@
-//var testsite = "test";
+﻿//var testsite = "test";
 console.log("background script is running");
 
 var gradisGrades;
@@ -22,4 +22,5 @@ async function fetching()
         .then(response => processData(response))
         .catch((error) => console.error('Error:', error));
 }
+
 fetching();
